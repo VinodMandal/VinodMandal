@@ -36,6 +36,7 @@ public class Base {
         ChromeOptions option = new ChromeOptions();
         driver = new ChromeDriver(option);
         option.addArguments("--remote-allow-origins=*");
+        option.addArguments("--headless");
 
         driver.manage().window().maximize();
 
