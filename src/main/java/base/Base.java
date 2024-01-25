@@ -20,7 +20,7 @@ public class Base {
     public Base() throws FileNotFoundException {
         try {
             prop = new Properties();
-            FileInputStream ip = new FileInputStream("C:\\Users\\vinod\\IdeaProjects\\DemoProject\\src\\main\\java\\config\\confi.properties");
+            FileInputStream ip = new FileInputStream("src/main/java/config/confi.properties");
             prop.load(ip);
 
         }catch (IOException e) {
@@ -34,9 +34,10 @@ public class Base {
 
 
         ChromeOptions option = new ChromeOptions();
-        driver = new ChromeDriver(option);
+
         option.addArguments("--remote-allow-origins=*");
         option.addArguments("--headless");
+        driver = new ChromeDriver(option);
 
         driver.manage().window().maximize();
 
